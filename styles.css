@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: center;
+}
+
+body {
+    font-family: "Acme", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    color: black;
+    background: url("./src/mario-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    padding: 40px 0 40px 0;
+}
+
+.blurred-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    margin: 0 10px 20px 10px;
+    padding: 10px;
+    border: 3px solid orange;
+    border-radius: 10px;
+    background-color: yellow;
+}
+
+#game-board {
+    margin: 20px auto;
+    width: 90%;
+    height: 540px;
+    background: url("./src/soil.png");
+    background-size: cover;
+    background-color: darkgreen;
+    border: 3px solid white;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#game-board div {
+    width: 33.33%;
+    height: 33.33%;
+    background-image: url("./src/pipe.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#game-board div img {
+    display: block;
+    width: 40%;
+    height: 40%;
+    text-align: center;
+    position: relative;
+    bottom: 8px;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+@media screen and (min-width: 580px) {
+    #game-board {
+        width: 540px;
+    }
+    
+}
+
+@media screen and (min-width: 478px) {
+    #game-board div img {
+        top: 25px;
+    }
+}
+
+button {
+    display: none;
+    margin: 0 auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: orangered;
+    border: 3px solid orange;
+    border-radius: 10px;
+    transition: all 500ms;
+}
+
+button:hover,
+button:focus {
+    box-shadow: 0 0.5em 0.2em -0.3em orangered;
+    transform: translateY(-0.25em);
+}
+
+button:active {
+    animation: pulse 1s;
+    box-shadow: 0 0 0.5em 0.5em orange;
+}
+
+@keyframes pulse {
+    100% { box-shadow: 0 0 0.5em 0.5em }
+  }
+
+.level-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: orange;
+}
